@@ -1,0 +1,61 @@
+<%-include("../dashlayout/header")-%>
+<main class="dash-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card spur-card">
+                    <div class="card-header">
+                        <div class="spur-card-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="spur-card-title"> Post Article </div>
+                    </div>
+                    <div class="card-body ">
+                        <form action="/dash/addpost" method="POST" enctype="multipart/form-data">
+                            <div class="form-group ">
+                                <label for="inputState">Category</label>
+                                <select id="" class="form-control" name="category">
+                                    <option value="cricket" selected>cricket</option>
+                                    <option value="football">football</option>
+                                    <option value="basketball">basketball</option>
+                                    <option value="tennis">tennis</option>
+                                    <option value="hockey">hockey</option>
+                                    <option value="othergames">othergames</option>
+                                    <option value="biography">bio</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                    <label for="inputEmail4">Title</label>
+                                    <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress">Slug</label>
+                                <input type="text" class="form-control" id="slug" placeholder="" name="slugg" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">Content</label>
+                                <textarea id="example" name="content" required></textarea>                            
+                            </div>
+
+                            <div class="form-group">
+                                    <label for="inputZip">MetaDescription</label>
+                                   <textarea class="form-control" name="metadesc" required></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="inputZip">Upload Photo</label>
+                                    <input type="file" class="form-control" accept="image/*" name="image" id="imgInp" required> 
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <img src="" id="show" alt="" style="width:200px;height:150px;">
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%-include("../dashlayout/footer")-%>

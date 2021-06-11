@@ -1,0 +1,100 @@
+<%-include("../dashlayout/header")-%>
+<main class="dash-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <%-include("../dashlayout/errors")-%>
+                <div class="card spur-card">
+                    <div class="card-header">
+                        <div class="spur-card-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="spur-card-title"> Post Article </div>
+                    </div>
+                    <div class="card-body ">
+                        <form action="/dash/addpost" method="POST" enctype="multipart/form-data">
+                            <div class="form-group ">
+                                <label for="inputState">Category</label>
+                                <select id="selct" class="form-control" name="category">
+                                    <option value="cricket" selected>cricket</option>
+                                    <option value="football">football</option>
+                                    <option value="basketball">basketball</option>
+                                    <option value="tennis">tennis</option>
+                                    <option value="hockey">hockey</option>
+                                    <option value="ipl">hockey</option>
+                                    <option value="othergames">othergames</option>
+                                    <option value="biography">bio</option>
+                                    <option value="latest news">latest news</option>
+                                    <option value="photos">photos</option>
+                                    <option value="videos">videos</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                    <label for="inputEmail4">Title</label>
+                                    <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress">Slug</label>
+                                <input type="text" class="form-control" id="slug" placeholder="" name="slugg" readonly>
+                            </div>
+                         
+                            <div class="form-group">
+                                <label for="inputAddress2">Content</label>
+                                <textarea id="example" name="content" required></textarea>                            
+                            </div>
+
+                            <div class="form-group">
+                                    <label for="metadesc">MetaDescription</label>
+                                   <textarea class="form-control" id="metadesc" name="metadesc" required></textarea>
+                            </div>
+                                                        
+                            <div class="form-row">
+                                <div class="form-group col-md-4" id="photo">
+                                    <label for="inputZip">Upload Photo/Video</label>
+                                    <input type="file" class="form-control" accept="audio/*|video/*|image/*" name="image" id="imgInp" required> 
+                                </div>
+                                <div class="form-group col-md-6" id="ppreview">
+                                    <img src="" id="show" alt="" style="width:200px;height:150px;">
+                                    <video controls src="" id="showvideo" style="width:200px;height:150px;"></video>
+                                </div>
+                            </div> 
+                            <div class="form-group">
+                            <h6>Google Preview</h6>            
+                                <div class="card col-md-8">
+                                  <div class="card-body">
+                                    <div id="seopreview-google" style="width: fit-content;word-wrap: normal;"></div>
+                                  </div>
+                                </div>
+                            </div>
+                              <br>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </form>
+                        <!-- <div class="modal fade" id="PreviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Preview HTML</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="titlePreview">
+                                        </div>
+                                        <div id="imagePreview">
+                                        </div>
+                                        <div id="editorPreview">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<%-include("../dashlayout/footer")-%>

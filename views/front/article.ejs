@@ -1,0 +1,78 @@
+<%-include('../frontlayout/header')-%>
+
+<section id="mainContent">
+    <div class="content_bottom">
+      <div class="col-lg-8 col-md-8">
+        <div class="content_bottom_left">
+          <div class="single_page_area">
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li><a href="/blog/category/<%=data[0].category%>?page=1"><%=data[0].category%></a></li>
+            </ol>
+            <h2 class="post_titile"><%= data[0].title%></h2>
+            <div class="single_page_content">
+              <div class="post_commentbox"> <a href="#"><i class="fa fa-eye"></i><%=data[0].views%></a> <span><i class="fa fa-calendar"></i><%=data[0].createdat.toLocaleDateString()%></span> <a href="#"><i class="fa fa-tags"></i><%=data[0].category%></a></div>
+              <%if(data[0].category!=="videos"){%>
+              <img class="img-center img-responsive" src="<%=data[0].image%>" alt="image">
+              <%}else{%>
+                 <video src="<%=data[0].image%>" controls style="width:100%; height:100%;" controlsList="nodownload"></video>
+                <%}%>
+                      <%-data[0].content%>   
+            </div>
+          </div>
+        </div>
+        <div class="post_pagination">
+          <%if(previous.length>0){%> 
+          <div class="prev"> <a class="angle_left" href="/blog/<%=previous[0].slug%>"><i class="fa fa-angle-double-left"></i></a>
+           <div class="pagincontent"> <span>Previous Post</span> <a href="/blog/<%=previous[0].slug%>"><%=previous[0].title.substring(0,70)%>...</a> </div>
+           <%}else{%>
+            <div class="prev"> 
+            <a class="angle_left disabled" ><i class="fa fa-angle-double-left"></i></a>
+            <div class="pagincontent disabled"> <span>Previous Post</span> <a></a> </div>    
+            <%}%>
+          </div>
+          <div class="next">
+            <%if(next.length>0){%>
+            <div class="pagincontent"> <span>Next Post</span> <a href="/blog/<%=next[0].slug%>"><%=next[0].title.substring(0,70)%>...</a> </div>
+            <a class="angle_right" href="/blog/<%=next[0].slug%>"><i class="fa fa-angle-double-right"></i></a> </div>
+            <%}else{%>
+              <div class="pagincontent disabled"> <span>Next Post</span> <a></a> </div>
+              <a class="angle_right disabled"><i class="fa fa-angle-double-right"></i></a> </div>
+              <%}%>
+          
+        </div>
+        <div class="share_post"> <a class="facebook" href="#"><i class="fa fa-facebook"></i>Facebook</a> <a class="twitter" href="#"><i class="fa fa-twitter"></i>Twitter</a> <a class="googleplus" href="#"><i class="fa fa-google-plus"></i>Google+</a> <a class="linkedin" href="#"><i class="fa fa-linkedin"></i>LinkedIn</a> <a class="stumbleupon" href="#"><i class="fa fa-stumbleupon"></i>StumbleUpon</a> <a class="pinterest" href="#"><i class="fa fa-pinterest"></i>Pinterest</a> </div>
+        <!-- <div class="similar_post">
+          <h2>Similar Post You May Like <i class="fa fa-thumbs-o-up"></i></h2>
+          <ul class="small_catg similar_nav wow fadeInDown animated">
+            <li>
+              <div class="media wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"> <a class="media-left related-img" href="#"><img src="../images/112x112.jpg" alt=""></a>
+                <div class="media-body">
+                  <h4 class="media-heading"><a href="#">Duis condimentum nunc pretium lobortis </a></h4>
+                  <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="media wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"> <a class="media-left related-img" href="#"><img src="../images/112x112.jpg" alt=""></a>
+                <div class="media-body">
+                  <h4 class="media-heading"><a href="#">Duis condimentum nunc pretium lobortis </a></h4>
+                  <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="media wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"> <a class="media-left related-img" href="#"><img src="../images/112x112.jpg" alt=""></a>
+                <div class="media-body">
+                  <h4 class="media-heading"><a href="#">Duis condimentum nunc pretium lobortis </a></h4>
+                  <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+      <%-include('../frontlayout/side')-%>
+    </div>
+  </section>
+<%-include('../frontlayout/footer')-%>

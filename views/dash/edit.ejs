@@ -1,0 +1,58 @@
+<%-include("../dashlayout/header")-%>
+
+<main class="dash-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <%-include("../dashlayout/errors")-%>
+                <div class="card spur-card">
+                    <div class="card-header">
+                        <div class="spur-card-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="spur-card-title"> Post Article </div>
+                    </div>
+                    <div class="card-body ">
+                        <form action="/dash/editpost/<%=data[0].pid%>" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="inputEmail4">Category</label>
+                                <input type="text" class="form-control" id="" placeholder="Enter Category" name="category" value="<%=data[0].category%>" required>
+                            </div>
+                            <div class="form-group">
+                                    <label for="inputEmail4">Title</label>
+                                    <input type="text" class="form-control" id="title2" placeholder="Enter Title" name="title" value="<%=data[0].title%>" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress">Slug</label>
+                                <input type="text" class="form-control" id="slugg" placeholder="" name="slugg" value="<%=data[0].slug%>" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">Content</label>
+                                <textarea id="example" name="content" required><%=data[0].content%></textarea>                            
+                            </div>
+                            
+                            <div class="form-group">
+                                    <label for="inputZip">MetaDescription</label>
+                                   <textarea class="form-control" name="metadesc" required><%=data[0].metadesc%></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputZip">Current Image</label>
+                                <img src="<%=data[0].image%>" id="show2" accept="image/*" alt="" style="width:200px;height:150px;">
+                        </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="inputZip">Upload Photo</label>
+                                    <input type="file" class="form-control"  name="image" id="imgInp2"> 
+                                </div>
+                            </div>
+                            <input type="hidden" name="pid" value="<%=data[0].pid%>">
+                            <input type="hidden" name="pics" value="<%=data[0].image%>"> 
+                            <input type="hidden" name="createdat" value="<%= data[0].createdat%>">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%-include("../dashlayout/footer")-%>

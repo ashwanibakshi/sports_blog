@@ -1,0 +1,81 @@
+  </div>
+  <footer id="footer">
+      <div class="footer_top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="single_footer_top wow fadeInLeft">
+                <h2>Most Popular</h2>
+                <ul class="small_catg wow fadeInDown media">
+                  <%if(popdata.length){%>
+                    <%for(var i=0; i < popdata.length; i++){%>
+                      <li>
+                        <!-- <div class="media wow fadeInDown"> <a class="media-left" href="#"> <img src="<%=popdata[i].image%>" alt="image"  style="width: 75px;height:75px;"> </a> -->
+                          
+                            <p style="margin-bottom:-10px;"><a href="/blog/<%=popdata[i].slug%>" style="color:white;"><%=popdata[i].title%></a></p>                          
+                        <!-- </div> -->
+                      </li>                  
+                      <%}%>
+                    <%}%>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="single_footer_top wow fadeInDown">
+                <h2>Labels</h2>
+                <ul class="labels_nav">
+                  <li><a href="/blog/category/cricket?page=1">Cricket</a></li>
+                  <li><a href="/blog/category/football?page=1">FootBall</a></li>
+                  <li><a href="/blog/category/hockey?page=1">Hockey</a></li>
+                  <li><a href="/blog/category/ipl?page=1">IPL</a></li>
+                  <li><a href="/blog/category/tennis?page=1">Tennis</a></li>
+                  <li><a href="/blog/category/photos?page=1">Photos</a></li>
+                  <li><a href="/blog/category/othergames?page=1">Other Games</a></li>
+                  <li><a href="/blog/category/videos?page=1">Videos</a></li>
+                  <li><a href="/blog/category/biography?page=1">Players Bio</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="single_footer_top wow fadeInRight">
+                <h2>About Us</h2>
+                <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed nec laoreet orci, eget ullamcorper quam. Phasellus lorem neque, </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="footer_bottom_left">
+                <p>Copyright &copy; 2021-22 <a href="/blog/index">11cricketer</a></p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="footer_bottom_right">
+                <p>Template Developed BY Wpfreeware</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/js/jquery.min.js"></script> 
+    <script src="/assets/js/bootstrap.min.js"></script> 
+    <script src="/assets/js/wow.min.js"></script> 
+    <script src="/assets/js/slick.min.js"></script> 
+    <script src="/assets/js/custom.js"></script>
+    <script src="/assets/js/own2.js"></script>
+    <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+    </body>
+    </html>
